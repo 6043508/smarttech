@@ -10,9 +10,17 @@ sensor = dht.DHT11(machine.Pin(4))
 
 
 def on_forever():
-    sensor.measure()
-    temp = sensor.temperature()
-    humidity = sensor.humidity()
+    # sensor.measure()
+    # temp = sensor.temperature()
+    # humidity = sensor.humidity()
+
+    #lampen moeten beiden rood zijn
+    # temp = 17
+    # humidity = 35
+
+    #lampen moeten beiden groen zijn
+    # temp = 1
+    # humidity = 1
 
     if temp < 10 or temp >15:  #placeholder values
         groeneled.on()
