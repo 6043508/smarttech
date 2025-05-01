@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dhgkq8nn5ge0t"]
+
+[ext_resource type="Shader" uid="uid://d07v2jlecxotv" path="res://shader/GreenLight.gdshader" id="1_xmf6p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_xmf6p")

@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://cep8shbm18pxg"]
+
+[ext_resource type="Theme" uid="uid://cd17wb3h13cnb" path="res://shader/control_theme.tres" id="1_vrdfc"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 868.0
+offset_top = 26.0
+offset_right = 1118.82
+offset_bottom = 356.155
+scale = Vector2(1.035, 1.035)
+theme = ExtResource("1_vrdfc")
+
+[node name="Temperature" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.5266
+offset_top = 114.01
+offset_right = 85.5266
+offset_bottom = 137.01
+text = "Humidity"
+
+[node name="TempSlider" type="HSlider" parent="Panel/Temperature"]
+custom_minimum_size = Vector2(-0.585, 0)
+layout_mode = 0
+offset_top = 23.0
+offset_right = 226.455
+offset_bottom = 40.58
+min_value = 2.0
+value = 50.0
+
+[node name="Humidity" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 13.5266
+offset_top = 64.7343
+offset_right = 115.527
+offset_bottom = 87.7343
+text = "Temperature"
+
+[node name="HumidSlider" type="HSlider" parent="Panel/Humidity"]
+custom_minimum_size = Vector2(-0.585, 0)
+layout_mode = 0
+offset_top = 23.0
+offset_right = 226.455
+offset_bottom = 40.58
+min_value = 2.0
+value = 50.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 73.43
+offset_top = 19.3237
+offset_right = 195.43
+offset_bottom = 61.3237
+theme_override_font_sizes/font_size = 26
+text = "Control"

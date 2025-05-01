@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b5vqwdb8ngxf0"]
+
+[ext_resource type="Shader" uid="uid://dt00jf5hy6s53" path="res://shader/RedLight.gdshader" id="1_l56yn"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_l56yn")

@@ -1,0 +1,100 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhuwca5ygmvge"]
+
+[ext_resource type="Script" path="res://script/TemperatureEnvironment.cs" id="1_mnmej"]
+[ext_resource type="PackedScene" path="res://scene/control.tscn" id="1_nbc6x"]
+[ext_resource type="Material" uid="uid://c8tysfomb63ej" path="res://shader/KasShader.tres" id="2_h6nst"]
+[ext_resource type="PackedScene" uid="uid://dcxmkmckn4y3b" path="res://assets/Kas.glb" id="2_hr7lf"]
+[ext_resource type="PackedScene" path="res://scene/Lights.tscn" id="4_mnmej"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbc6x"]
+sky_top_color = Color(0.542238, 0.852735, 0.927994, 1)
+sky_horizon_color = Color(0.989769, 1.05964, 1.06946, 1)
+ground_horizon_color = Color(0.989769, 1.05964, 1.06946, 1)
+
+[sub_resource type="Sky" id="Sky_h6nst"]
+sky_material = SubResource("ProceduralSkyMaterial_nbc6x")
+
+[sub_resource type="Environment" id="Environment_hr7lf"]
+background_mode = 2
+sky = SubResource("Sky_h6nst")
+tonemap_mode = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_nbc6x"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hr7lf"]
+
+[node name="Main" type="Node3D"]
+
+[node name="TemperatureEnvironment" type="Node" parent="."]
+script = ExtResource("1_mnmej")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hr7lf")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 2.07746, 7.0731, -2.95578)
+light_energy = 0.215
+shadow_enabled = true
+
+[node name="Controls" type="CanvasLayer" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Controls"]
+transform = Transform3D(0.917755, -0.108802, 0.381954, 0, 0.961741, 0.273959, -0.397148, -0.251427, 0.882643, 1.842, 1.958, 3.355)
+fov = 63.1
+
+[node name="Control" parent="Controls" instance=ExtResource("1_nbc6x")]
+
+[node name="KasMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(10.0157, 0, 0, 0, 0.187293, 0, 0, 0, 8.45722, 0, 0, 0)
+mesh = SubResource("BoxMesh_nbc6x")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="KasMesh"]
+transform = Transform3D(-0.346604, 0, 0, 0, 9.48359, 0, 0, 0, 0.49213, 0, 5.09441, 0.057453)
+visible = false
+
+[node name="CSGBox3D" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.45058e-09)
+size = Vector3(1, 1, 0.444824)
+material = ExtResource("2_h6nst")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(1.8, 0, 0, 0, 1.1, 0, 0, 0, 0.88, 0, -0.112776, -2.98023e-08)
+operation = 2
+calculate_tangents = false
+size = Vector3(1, 1, 0.444824)
+material = ExtResource("2_h6nst")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(8.25446e-08, 0, 2.06621, 0, 1.1, 0, -0.54, 0, -1.34711e-07, 0, -0.112776, -2.98023e-08)
+operation = 2
+calculate_tangents = false
+size = Vector3(1, 1, 0.444824)
+material = ExtResource("2_h6nst")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(0.942483, 0, 0, 0, 1.75332, 0, -6.83947e-15, 0, 0.929281, 1.97113e-17, -0.236829, -5.21541e-08)
+operation = 2
+calculate_tangents = false
+size = Vector3(1, 1, 0.444824)
+material = ExtResource("2_h6nst")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(0.0406347, 0, 0, 0, 1.30805, 0, -2.94881e-16, 0, 0.01636, 0.0062485, -0.177492, -0.21342)
+size = Vector3(0.61377, 1, 1)
+material = ExtResource("2_h6nst")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
+transform = Transform3D(0.0406347, 0, 0, 0, 1.30805, 0, -2.94881e-16, 0, 0.01636, 0.0062485, -0.177492, 0.213778)
+size = Vector3(0.61377, 1, 1)
+material = ExtResource("2_h6nst")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="KasMesh"]
+transform = Transform3D(3.59227, 0, 0, 0, -8.39698e-06, -192.101, 0, 4.25424, -1.85959e-07, -1.30092, -19.7903, -1.09254)
+mesh = SubResource("PlaneMesh_hr7lf")
+skeleton = NodePath("")
+
+[node name="Lights" parent="KasMesh" instance=ExtResource("4_mnmej")]
+transform = Transform3D(0.0204392, 0, 0.000231288, 0, 1.12124, 0, -0.000916258, 0, 0.032275, -0.0297893, 5.96096, 0.142672)
+
+[node name="Kas" parent="KasMesh" instance=ExtResource("2_hr7lf")]
+transform = Transform3D(0.0346367, 0, 0, 0, 1.85224, 0, 0, 0, 0.0410195, -0.0382885, -0.210488, 0.0236484)

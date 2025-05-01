@@ -1,0 +1,36 @@
+[gd_scene load_steps=9 format=3 uid="uid://bx1gqhuihgbfg"]
+
+[ext_resource type="Shader" uid="uid://smnw33mff8o1" path="res://shader/LightBox.gdshader" id="1_6wj4k"]
+[ext_resource type="Script" path="res://script/Lights.cs" id="1_45t55"]
+[ext_resource type="Material" uid="uid://b5vqwdb8ngxf0" path="res://shader/RedLight.tres" id="1_htr7r"]
+[ext_resource type="Material" uid="uid://dhgkq8nn5ge0t" path="res://shader/GreenLight.tres" id="2_6wj4k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_45t55"]
+render_priority = 0
+shader = ExtResource("1_6wj4k")
+
+[sub_resource type="BoxMesh" id="BoxMesh_htr7r"]
+material = SubResource("ShaderMaterial_45t55")
+
+[sub_resource type="SphereMesh" id="SphereMesh_htr7r"]
+material = ExtResource("1_htr7r")
+
+[sub_resource type="SphereMesh" id="SphereMesh_45t55"]
+material = ExtResource("2_6wj4k")
+
+[node name="Lights" type="Node3D"]
+script = ExtResource("1_45t55")
+
+[node name="LightBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.851846, 0, 0, 0, 1.33362, 0, 0, 0, 0.309771, 0, -0.02, 0.14)
+mesh = SubResource("BoxMesh_htr7r")
+
+[node name="LightRed" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, -0.001, 0.269, 0.252)
+material_override = ExtResource("1_htr7r")
+mesh = SubResource("SphereMesh_htr7r")
+surface_material_override/0 = ExtResource("1_htr7r")
+
+[node name="LightGreen" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.515, 0, 0, 0, 0.515, 0, 0, 0, 0.515, -0.001, -0.331, 0.252)
+mesh = SubResource("SphereMesh_45t55")
