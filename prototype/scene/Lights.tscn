@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://q2fxvaca171b"]
+[gd_scene load_steps=9 format=3 uid="uid://bx1gqhuihgbfg"]
 
 [ext_resource type="Shader" uid="uid://smnw33mff8o1" path="res://shader/LightBox.gdshader" id="1_6wj4k"]
 [ext_resource type="Script" uid="uid://wfd2boeg48cl" path="res://script/Lights.cs" id="1_45t55"]

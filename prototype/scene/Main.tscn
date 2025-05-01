@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cep8shbm18pxg" path="res://scene/control.tscn" id="1_nbc6x"]
 [ext_resource type="Material" uid="uid://c8tysfomb63ej" path="res://shader/KasShader.tres" id="2_h6nst"]
 [ext_resource type="PackedScene" uid="uid://dcxmkmckn4y3b" path="res://assets/Kas.glb" id="2_hr7lf"]
-[ext_resource type="PackedScene" uid="uid://q2fxvaca171b" path="res://scene/Lights.tscn" id="4_mnmej"]
+[ext_resource type="PackedScene" uid="uid://bx1gqhuihgbfg" path="res://scene/Lights.tscn" id="4_mnmej"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbc6x"]
 sky_top_color = Color(0.542238, 0.852735, 0.927994, 1)

@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://co706ha6ka4rx"]
 
-[ext_resource type="Shader" path="res://shader/RedLight.gdshader" id="1_l56yn"]
+[ext_resource type="Shader" uid="uid://dt00jf5hy6s53" path="res://shader/RedLight.gdshader" id="1_l56yn"]
 
 [resource]
 render_priority = 0
