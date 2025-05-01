@@ -1,4 +1,4 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dhgkq8nn5ge0t"]
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bnjhidi47e10g"]
 
 [ext_resource type="Shader" uid="uid://d07v2jlecxotv" path="res://shader/GreenLight.gdshader" id="1_xmf6p"]
 

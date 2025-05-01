@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cep8shbm18pxg"]
 
-[ext_resource type="Theme" uid="uid://cd17wb3h13cnb" path="res://shader/control_theme.tres" id="1_vrdfc"]
+[ext_resource type="Theme" uid="uid://belssc3yasnww" path="res://shader/control_theme.tres" id="1_vrdfc"]
 
 [node name="Control" type="Control"]
 layout_mode = 3

@@ -1,9 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bx1gqhuihgbfg"]
+[gd_scene load_steps=9 format=3 uid="uid://q2fxvaca171b"]
 
 [ext_resource type="Shader" uid="uid://smnw33mff8o1" path="res://shader/LightBox.gdshader" id="1_6wj4k"]
-[ext_resource type="Script" path="res://script/Lights.cs" id="1_45t55"]
-[ext_resource type="Material" uid="uid://b5vqwdb8ngxf0" path="res://shader/RedLight.tres" id="1_htr7r"]
-[ext_resource type="Material" uid="uid://dhgkq8nn5ge0t" path="res://shader/GreenLight.tres" id="2_6wj4k"]
+[ext_resource type="Script" uid="uid://wfd2boeg48cl" path="res://script/Lights.cs" id="1_45t55"]
+[ext_resource type="Material" uid="uid://co706ha6ka4rx" path="res://shader/RedLight.tres" id="1_htr7r"]
+[ext_resource type="Material" uid="uid://bnjhidi47e10g" path="res://shader/GreenLight.tres" id="2_6wj4k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_45t55"]
 render_priority = 0
