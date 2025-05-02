@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cep8shbm18pxg"]
+[gd_scene load_steps=3 format=3 uid="uid://cep8shbm18pxg"]
 
+[ext_resource type="Script" uid="uid://cde43vsfkmgku" path="res://script/KasControls.cs" id="1_mnow5"]
 [ext_resource type="Theme" uid="uid://belssc3yasnww" path="res://shader/control_theme.tres" id="1_vrdfc"]
 
 [node name="Control" type="Control"]
@@ -7,19 +8,29 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 2.0
+offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_mnow5")
 
-[node name="Panel" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 868.0
-offset_top = 26.0
-offset_right = 1118.82
-offset_bottom = 356.155
-scale = Vector2(1.035, 1.035)
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -286.0
+offset_top = 32.0
+offset_right = -37.0
+offset_bottom = 365.0
+grow_horizontal = 0
 theme = ExtResource("1_vrdfc")
 
-[node name="Temperature" type="Label" parent="Panel"]
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_vrdfc")
+
+[node name="Temperature" type="Label" parent="MarginContainer/Panel"]
 layout_mode = 0
 offset_left = 13.5266
 offset_top = 114.01
@@ -27,16 +38,17 @@ offset_right = 85.5266
 offset_bottom = 137.01
 text = "Humidity"
 
-[node name="TempSlider" type="HSlider" parent="Panel/Temperature"]
+[node name="TempSlider" type="HSlider" parent="MarginContainer/Panel/Temperature"]
 custom_minimum_size = Vector2(-0.585, 0)
 layout_mode = 0
 offset_top = 23.0
 offset_right = 226.455
 offset_bottom = 40.58
+scale = Vector2(0.96, 1)
 min_value = 2.0
 value = 50.0
 
-[node name="Humidity" type="Label" parent="Panel"]
+[node name="Humidity" type="Label" parent="MarginContainer/Panel"]
 layout_mode = 0
 offset_left = 13.5266
 offset_top = 64.7343
@@ -44,16 +56,17 @@ offset_right = 115.527
 offset_bottom = 87.7343
 text = "Temperature"
 
-[node name="HumidSlider" type="HSlider" parent="Panel/Humidity"]
+[node name="HumidSlider" type="HSlider" parent="MarginContainer/Panel/Humidity"]
 custom_minimum_size = Vector2(-0.585, 0)
 layout_mode = 0
 offset_top = 23.0
 offset_right = 226.455
 offset_bottom = 40.58
+scale = Vector2(0.96, 0.96)
 min_value = 2.0
 value = 50.0
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
 layout_mode = 0
 offset_left = 73.43
 offset_top = 19.3237
@@ -61,3 +74,28 @@ offset_right = 195.43
 offset_bottom = 61.3237
 theme_override_font_sizes/font_size = 26
 text = "Control"
+
+[node name="HFlowContainer" type="HFlowContainer" parent="MarginContainer/Panel"]
+layout_mode = 2
+offset_left = 11.0
+offset_top = 173.0
+offset_right = 228.57
+offset_bottom = 323.0
+scale = Vector2(0.998455, 1)
+last_wrap_alignment = 1
+
+[node name="TempLabel" type="Label" parent="MarginContainer/Panel/HFlowContainer"]
+layout_mode = 2
+text = "Temperature: "
+
+[node name="TempValue" type="Label" parent="MarginContainer/Panel/HFlowContainer"]
+layout_mode = 2
+text = "Placeholder"
+
+[node name="HumidLabel" type="Label" parent="MarginContainer/Panel/HFlowContainer"]
+layout_mode = 2
+text = "Humidity: "
+
+[node name="HumidValue" type="Label" parent="MarginContainer/Panel/HFlowContainer"]
+layout_mode = 2
+text = "Placeholder"

@@ -8,4 +8,6 @@ corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
 [resource]
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
 Panel/styles/panel = SubResource("StyleBoxFlat_0hh5j")

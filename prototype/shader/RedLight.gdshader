@@ -1,12 +1,12 @@
 shader_type spatial;
-
+uniform vec4 red_light_color : source_color;
 void vertex() {
 	// Called for every vertex the material is visible on.
 }
 
 void fragment() {
 	// Called for every pixel the material is visible on.
-	ALBEDO = vec3(0.5, 0.0, 0.0);
+	ALBEDO = red_light_color.rgb;
 	//EMISSION = vec3(1.0, 0.0, 0.0);
 }
 

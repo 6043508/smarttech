@@ -5,3 +5,4 @@
 [resource]
 render_priority = 0
 shader = ExtResource("1_xmf6p")
+shader_parameter/green_light_color = Color(0, 0, 0, 1)
