@@ -1,11 +1,19 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjeir06bp4q01"]
+[gd_scene load_steps=21 format=3 uid="uid://bjeir06bp4q01"]
 
 [ext_resource type="Script" uid="uid://dbh2ifwys1hk3" path="res://script/TemperatureEnvironment.cs" id="1_mnmej"]
 [ext_resource type="PackedScene" uid="uid://cep8shbm18pxg" path="res://scene/control.tscn" id="1_nbc6x"]
-[ext_resource type="Material" uid="uid://c8tysfomb63ej" path="res://shader/KasShader.tres" id="2_h6nst"]
 [ext_resource type="PackedScene" uid="uid://dcxmkmckn4y3b" path="res://assets/Kas.glb" id="2_hr7lf"]
 [ext_resource type="Script" uid="uid://cui3tgnjodawx" path="res://script/LogInfo.cs" id="2_o6q0f"]
 [ext_resource type="PackedScene" uid="uid://bx1gqhuihgbfg" path="res://scene/Lights.tscn" id="4_mnmej"]
+[ext_resource type="ArrayMesh" uid="uid://njwu68ib0rg1" path="res://assets/bushes/03/bush_03.obj" id="6_764rb"]
+[ext_resource type="Texture2D" uid="uid://b8nt06p8uxbff" path="res://assets/bushes/03/diffuse.tga" id="7_aex65"]
+[ext_resource type="Texture2D" uid="uid://c6ahl2pe1xw4e" path="res://assets/bushes/03/normal.tga" id="8_hrl0l"]
+[ext_resource type="ArrayMesh" uid="uid://nffdlvvpa8up" path="res://assets/bushes/01/bush_01.obj" id="9_tuai4"]
+[ext_resource type="Material" uid="uid://bdkbi4x386sxm" path="res://shader/Plant1.tres" id="10_ob58h"]
+[ext_resource type="ArrayMesh" uid="uid://cvl6pd5qg3e6e" path="res://assets/bushes/04/bush_04.obj" id="11_3hqfm"]
+[ext_resource type="Material" uid="uid://ddrxi8a7oqsxl" path="res://shader/Plant3.tres" id="12_08k7p"]
+[ext_resource type="ArrayMesh" uid="uid://c6ru7siv5cewh" path="res://assets/bushes/05/bush_05.obj" id="13_hrl0l"]
+[ext_resource type="Material" uid="uid://b6bflvf3t46fc" path="res://shader/Plant4.tres" id="14_tuai4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nbc6x"]
 sky_top_color = Color(0.542238, 0.852735, 0.927994, 1)
@@ -23,6 +31,15 @@ tonemap_mode = 2
 [sub_resource type="BoxMesh" id="BoxMesh_nbc6x"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hr7lf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cuns"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("7_aex65")
+normal_enabled = true
+normal_scale = 1.34
+normal_texture = ExtResource("8_hrl0l")
 
 [node name="Main" type="Node3D"]
 
@@ -55,46 +72,6 @@ fov = 63.1
 transform = Transform3D(10.0157, 0, 0, 0, 0.187293, 0, 0, 0, 8.45722, 0.2, 0.2, -0.2)
 mesh = SubResource("BoxMesh_nbc6x")
 
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="KasMesh"]
-transform = Transform3D(-0.346604, 0, 0, 0, 9.48359, 0, 0, 0, 0.49213, 0, 5.09441, 0.057453)
-visible = false
-
-[node name="CSGBox3D" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.45058e-09)
-size = Vector3(1, 1, 0.444824)
-material = ExtResource("2_h6nst")
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(1.8, 0, 0, 0, 1.1, 0, 0, 0, 0.88, 0, -0.112776, -2.98023e-08)
-operation = 2
-calculate_tangents = false
-size = Vector3(1, 1, 0.444824)
-material = ExtResource("2_h6nst")
-
-[node name="CSGBox3D3" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(8.25446e-08, 0, 2.06621, 0, 1.1, 0, -0.54, 0, -1.34711e-07, 0, -0.112776, -2.98023e-08)
-operation = 2
-calculate_tangents = false
-size = Vector3(1, 1, 0.444824)
-material = ExtResource("2_h6nst")
-
-[node name="CSGBox3D4" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(0.942483, 0, 0, 0, 1.75332, 0, -6.83947e-15, 0, 0.929281, 1.97113e-17, -0.236829, -5.21541e-08)
-operation = 2
-calculate_tangents = false
-size = Vector3(1, 1, 0.444824)
-material = ExtResource("2_h6nst")
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(0.0406347, 0, 0, 0, 1.30805, 0, -2.94881e-16, 0, 0.01636, 0.0062485, -0.177492, -0.21342)
-size = Vector3(0.61377, 1, 1)
-material = ExtResource("2_h6nst")
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="KasMesh/CSGCombiner3D"]
-transform = Transform3D(0.0406347, 0, 0, 0, 1.30805, 0, -2.94881e-16, 0, 0.01636, 0.0062485, -0.177492, 0.213778)
-size = Vector3(0.61377, 1, 1)
-material = ExtResource("2_h6nst")
-
 [node name="MeshInstance3D" type="MeshInstance3D" parent="KasMesh"]
 transform = Transform3D(3.59227, 0, 0, 0, -8.39698e-06, -192.101, 0, 4.25424, -1.85959e-07, -1.30092, -19.7903, -1.09254)
 mesh = SubResource("PlaneMesh_hr7lf")
@@ -105,3 +82,99 @@ transform = Transform3D(0.0204392, 0, 0.00018503, 0, 1.12124, 0, -0.000916258, 0
 
 [node name="Kas" parent="KasMesh" instance=ExtResource("2_hr7lf")]
 transform = Transform3D(0.0346367, 0, 0, 0, 1.85224, 0, 0, 0, 0.0410195, -0.0382885, -0.210488, 0.0236484)
+
+[node name="Plants" type="MeshInstance3D" parent="KasMesh"]
+transform = Transform3D(0.0010224, 0, 0, 0, 0.0546737, 0, 0, 0, 0.0012108, -0.143615, -0.172394, 0.082202)
+mesh = ExtResource("6_764rb")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8cuns")
+
+[node name="FlowerPlant" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(0.758519, 0, 0, 0, 0.758519, 0, 0, 0, 0.758519, 233.407, 7.30465, -87.7275)
+mesh = ExtResource("6_764rb")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("StandardMaterial3D_8cuns")
+
+[node name="Plants" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(0.461426, 0, 0, 0, 0.461426, 0, 0, 0, 0.461426, 218.1, 16.825, 10.3809)
+mesh = ExtResource("9_tuai4")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("10_ob58h")
+
+[node name="Plants" type="MeshInstance3D" parent="KasMesh/Plants/Plants"]
+transform = Transform3D(-1.04274, 0, -0.874966, 0, 1.36121, 0, 0.874966, 0, -1.04274, -51.8956, -11.7603, -201.667)
+mesh = ExtResource("9_tuai4")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("10_ob58h")
+
+[node name="Plants" type="MeshInstance3D" parent="KasMesh/Plants/Plants/Plants"]
+transform = Transform3D(-1.04274, 0, -0.874966, 0, 1.36121, 0, 0.874966, 0, -1.04274, -81.1754, -11.7603, 7.45763)
+mesh = ExtResource("9_tuai4")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("10_ob58h")
+
+[node name="Plants" type="MeshInstance3D" parent="KasMesh/Plants/Plants/Plants/Plants"]
+transform = Transform3D(-1.04274, 0, -0.874966, 0, 1.36121, 0, 0.874966, 0, -1.04274, -79.8164, -15.521, -247.947)
+mesh = ExtResource("9_tuai4")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("10_ob58h")
+
+[node name="Bush04" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(1.58691, 0, 0, 0, 1.58691, 0, 0, 0, 1.58691, 78.223, 8.166, -84.385)
+mesh = ExtResource("11_3hqfm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_08k7p")
+
+[node name="Bush04" type="MeshInstance3D" parent="KasMesh/Plants/Bush04"]
+transform = Transform3D(1.58691, 0, 0, 0, 1.58691, 0, 0, 0, 1.58691, -11.2428, -44.1465, 20.5136)
+mesh = ExtResource("11_3hqfm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_08k7p")
+
+[node name="Bush04" type="MeshInstance3D" parent="KasMesh/Plants/Bush04/Bush04"]
+transform = Transform3D(-0.402705, 0, -0.187784, 0, 0.444336, 0, 0.187784, 0, -0.402705, 63.1404, 36.188, 28.3494)
+mesh = ExtResource("11_3hqfm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_08k7p")
+
+[node name="Bush05" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(1.11084, 0, 0, 0, 1.11084, 0, 0, 0, 1.11084, 210.415, 15.6287, -30.293)
+mesh = ExtResource("11_3hqfm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_08k7p")
+
+[node name="Bush07" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(-1.17931, 0, 0, 0, 0.491381, -7.41964e-08, 0, 7.41964e-08, 0.491381, 207.148, -16.6803, 18.1802)
+mesh = ExtResource("13_hrl0l")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("14_tuai4")
+
+[node name="Bush06" type="MeshInstance3D" parent="KasMesh/Plants/Bush07"]
+transform = Transform3D(-1.68237, 0, 0, 0, 0.700986, -1.05846e-07, 0, 1.05846e-07, 0.700985, 134.114, 7.60042, -4.97077)
+mesh = ExtResource("13_hrl0l")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("14_tuai4")
+
+[node name="Bush06" type="MeshInstance3D" parent="KasMesh/Plants"]
+transform = Transform3D(0.700986, 0, 0, 0, 0.700986, 0, 0, 0, 0.700985, 140.469, 3.15314, -87.4218)
+mesh = ExtResource("13_hrl0l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("14_tuai4")
+
+[node name="Bush07" type="MeshInstance3D" parent="KasMesh/Plants/Bush06"]
+transform = Transform3D(-0.32396, 1.49029e-08, -0.445342, 1.15746e-07, 0.491381, -1.81548e-08, -0.694734, 7.49174e-08, 0.207666, -232.105, -19.1672, 148.435)
+mesh = ExtResource("13_hrl0l")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("14_tuai4")
+
+[node name="Bush06" type="MeshInstance3D" parent="KasMesh/Plants/Bush06"]
+transform = Transform3D(0.700986, 0, 0, 0, 0.700986, 0, 0, 0, 0.700985, 18.876, -18.494, 145.305)
+mesh = ExtResource("13_hrl0l")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("14_tuai4")
+
+[node name="Bush04" type="MeshInstance3D" parent="KasMesh/Plants/Bush06"]
+transform = Transform3D(1.90132, 0, -1.44318, 0, 2.387, 0, 1.44318, 0, 1.90132, -207.998, -27.995, 108.255)
+mesh = ExtResource("11_3hqfm")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_08k7p")

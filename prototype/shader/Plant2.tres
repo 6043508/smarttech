@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://bnr7gs7tobrbi"]
+
+[ext_resource type="Texture2D" uid="uid://c3qub01hcqhhb" path="res://assets/bushes/01/diffuse.tga" id="1_11b7m"]
+[ext_resource type="Texture2D" uid="uid://c6ahl2pe1xw4e" path="res://assets/bushes/03/normal.tga" id="2_l8elt"]
+
+[resource]
+albedo_texture = ExtResource("1_11b7m")
+normal_enabled = true
+normal_scale = -9.57
+normal_texture = ExtResource("2_l8elt")
+subsurf_scatter_strength = 0.31
+refraction_scale = 1.0

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://b6bflvf3t46fc"]
+
+[ext_resource type="Texture2D" uid="uid://bqb75ew3bfl2d" path="res://assets/bushes/05/diffuse.tga" id="1_qa2ie"]
+[ext_resource type="Texture2D" uid="uid://dhkwu7adaaxa" path="res://assets/bushes/05/normal.tga" id="2_yybse"]
+
+[resource]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("1_qa2ie")
+normal_enabled = true
+normal_scale = -4.95
+normal_texture = ExtResource("2_yybse")
